@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!-- <meta name="viewport" content="width=1024"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=0.1, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.1" />
     <title>LOT-Legends of Tank</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico" />
     <link rel="stylesheet" href="TemplateData/style.css" />
@@ -13,22 +13,11 @@
     <link rel="manifest" href="./manifest.json" />
     <link href="./static/css/main.1359096b.chunk.css" rel="stylesheet" />
     <style>
-      /* #unity-footer {
-        display: none;
-      }
-      #unity-canvas {
-        width: 100vw !important;
-        height: 101vh !important;
-      } */
-      /* #unity-desktop {
-        position: relative;
-      } */
-      #unity-canvas {
-        height: 54% !important;
-      }
-
       #unity-footer {
         display: block !important;
+      }
+      #unity-canvas {
+        image-rendering: pixelated;
       }
     </style>
   </head>
@@ -36,7 +25,7 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas"></canvas>
+      <canvas id="unity-canvas" width="200" height="100"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -70,7 +59,7 @@
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
 
       var mobileWarning = document.querySelector("#unity-mobile-warning");
-      // let viewport = document.querySelector("meta[name=viewport]");
+      let viewport = document.querySelector("meta[name=viewport]");
 
       // viewport.setAttribute("content", "width=1024");
 
@@ -90,6 +79,7 @@
         setTimeout(() => {
           mobileWarning.style.display = "none";
         }, 5000);
+        // canvas.style.width = "400px";
       } else {
         canvas.style.width = "400px";
         canvas.style.height = "630px";
