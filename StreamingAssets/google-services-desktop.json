@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "187386513958",
+    "firebase_url": "https://battle-city-tank-default-rtdb.firebaseio.com",
+    "project_id": "battle-city-tank",
+    "storage_bucket": "battle-city-tank.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:187386513958:android:775f4cfa5b69d0b28af4e7",
+        "android_client_info": {
+          "package_name": "io.battlecity.tank"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "187386513958-2ekas8060fc94dlmub7s99g7b3mk6i6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWGmdDV2bEd8yyRRpY-aU3Cf0SSJSlUNU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "187386513958-2ekas8060fc94dlmub7s99g7b3mk6i6k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "187386513958-s92e6sofp1dsli8jsbjijmd7iunf6id3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.battlecity.tank",
+                "app_store_id": "1661493048"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:187386513958:android:cb27e9260fef14798af4e7",
+        "android_client_info": {
+          "package_name": "tank.battlecity.io"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "187386513958-2ekas8060fc94dlmub7s99g7b3mk6i6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWGmdDV2bEd8yyRRpY-aU3Cf0SSJSlUNU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "187386513958-2ekas8060fc94dlmub7s99g7b3mk6i6k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "187386513958-s92e6sofp1dsli8jsbjijmd7iunf6id3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.battlecity.tank",
+                "app_store_id": "1661493048"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
