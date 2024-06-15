@@ -18,24 +18,33 @@
         width: 100vw !important;
         height: 101vh !important;
       } */
+      /* #unity-desktop {
+        position: relative;
+      } */
+       #unity-canvas {
+        height: 94% !important;
+       }
+
+       #unity-footer {
+        display: block !important;
+      }
+
     </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" ></canvas>
+      <canvas id="unity-canvas"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
         </div>
       </div>
-      <div id="unity-mobile-warning">
-        Welcome to Hangarx
-      </div>
+      <div id="unity-mobile-warning">Welcome to Hangarx</div>
       <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
+        <!-- <div id="unity-webgl-logo"></div> -->
         <div id="unity-fullscreen-button"></div>
         <div id="unity-build-title">LOT-Legends of Tank</div>
       </div>
@@ -58,6 +67,7 @@
       var loadingBar = document.querySelector("#unity-loading-bar");
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+
       var mobileWarning = document.querySelector("#unity-mobile-warning");
 
       // By default Unity keeps WebGL canvas render target size matched with
@@ -347,5 +357,18 @@
     </script>
     <script src="./static/js/24.f4ac6618.chunk.js"></script>
     <script src="./static/js/main.21f4a23e.chunk.js"></script>
+    <script>
+      function openFullscreen(elem) {
+        if (elem.requestFullscreen) {
+          elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) {
+          /* Safari */
+          elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) {
+          /* IE11 */
+          elem.msRequestFullscreen();
+        }
+      }
+    </script>
   </body>
 </html>
