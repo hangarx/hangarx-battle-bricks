@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- <meta name="viewport" content="width=1024"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=0.1, maximum-scale=1.0, user-scalable=no" />
     <title>LOT-Legends of Tank</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico" />
     <link rel="stylesheet" href="TemplateData/style.css" />
@@ -21,14 +23,13 @@
       /* #unity-desktop {
         position: relative;
       } */
-       #unity-canvas {
-        height: 94% !important;
-       }
-
-       #unity-footer {
-        display: block !important;
+      #unity-canvas {
+        height: 54% !important;
       }
 
+      #unity-footer {
+        display: block !important;
+      }
     </style>
   </head>
   <body>
@@ -69,6 +70,9 @@
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
 
       var mobileWarning = document.querySelector("#unity-mobile-warning");
+      // let viewport = document.querySelector("meta[name=viewport]");
+
+      // viewport.setAttribute("content", "width=1024");
 
       // By default Unity keeps WebGL canvas render target size matched with
       // the DOM size of the canvas element (scaled by window.devicePixelRatio)
