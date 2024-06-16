@@ -17,7 +17,7 @@
         display: block !important;
       }
       #unity-canvas {
-        image-rendering: pixelated;
+        /* image-rendering: pixelated; */
       }
     </style>
   </head>
@@ -74,7 +74,7 @@
         container.className = "unity-mobile";
         // Avoid draining fillrate performance on mobile devices,
         // and default/override low DPI mode on mobile browsers.
-        config.devicePixelRatio = 1;
+        config.devicePixelRatio = window.devicePixelRatio;
         mobileWarning.style.display = "block";
         setTimeout(() => {
           mobileWarning.style.display = "none";
@@ -101,6 +101,8 @@
             fullscreenButton.onclick = () => {
               unityInstance.SetFullscreen(1);
             };
+
+
           })
           .catch((message) => {
             alert(message);
