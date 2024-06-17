@@ -10,6 +10,12 @@
     <script src="network.js"></script>
     <link rel="manifest" href="./manifest.json" />
     <link href="./static/css/main.1359096b.chunk.css" rel="stylesheet" />
+
+    <style>
+      canvas {
+        height: 94% !important;
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -22,13 +28,13 @@
           <div id="unity-progress-bar-full"></div>
         </div>
       </div>
-      <div id="unity-mobile-warning">
-        
-      </div>
+      <div id="unity-mobile-warning"></div>
       <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
+        <button id="ton-connect" onclick="connect()">Connect</button>
+
+        <!-- <div id="unity-webgl-logo"></div> -->
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">LOT-Legends of Tank</div>
+        <!-- <div id="unity-build-title">LOT-Legends of Tank</div> -->
       </div>
     </div>
     <script>
@@ -338,5 +344,9 @@
     </script>
     <script src="./static/js/24.f4ac6618.chunk.js"></script>
     <script src="./static/js/main.21f4a23e.chunk.js"></script>
+    <script src="./tonweb.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/buffer@6.0.3/index.min.js"></script> -->
+    <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
+    <script src="./connect-wallet.js"></script>
   </body>
 </html>
