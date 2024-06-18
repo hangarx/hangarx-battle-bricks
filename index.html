@@ -12,8 +12,11 @@
     <link href="./static/css/main.1359096b.chunk.css" rel="stylesheet" />
 
     <style>
+      #unity-container {
+        position: relative;
+      }
       canvas {
-        height: 94% !important;
+        height: 100vh;
       }
     </style>
   </head>
@@ -29,9 +32,9 @@
         </div>
       </div>
       <div id="unity-mobile-warning"></div>
-      <div id="unity-footer">
+      <div id="unity-footer" style="display: none">
         <button id="ton-connect" onclick="connect()">Connect</button>
-
+        <button id="cookie" onclick="getCookie()"></button>
         <!-- <div id="unity-webgl-logo"></div> -->
         <div id="unity-fullscreen-button"></div>
         <!-- <div id="unity-build-title">LOT-Legends of Tank</div> -->
@@ -344,6 +347,12 @@
     </script>
     <script src="./static/js/24.f4ac6618.chunk.js"></script>
     <script src="./static/js/main.21f4a23e.chunk.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"
+      integrity="sha512-JSCFHhKDilTRRXe9ak/FJ28dcpOJxzQaCd3Xg8MyF6XFjODhy/YMCM8HW0TFDckNHWUewW+kfvhin43hKtJxAw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="./tonweb.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/buffer@6.0.3/index.min.js"></script> -->
     <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>

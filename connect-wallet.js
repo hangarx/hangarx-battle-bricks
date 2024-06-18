@@ -3,25 +3,27 @@ const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
   // buttonRootId: 'ton-connect'
 });
 
+const baseURL = "https://api-polygon.battlecity.io";
+
 let currentTonWalletInfo = {};
 
 let interval;
 
-const customWallet = {
-  appName: "telegram-wallet",
-  name: "Wallet",
-  imageUrl: "https://wallet.tg/images/logo-288.png",
-  aboutUrl: "https://wallet.tg/",
-  universalLink: "https://t.me/wallet/start",
-  bridgeUrl: "https://bridge.tonapi.io/bridge",
-  platforms: ["ios", "android", "macos", "windows", "linux"],
-};
+// const customWallet = {
+//   appName: "telegram-wallet",
+//   name: "Wallet",
+//   imageUrl: "https://wallet.tg/images/logo-288.png",
+//   aboutUrl: "https://wallet.tg/",
+//   universalLink: "https://t.me/wallet/start",
+//   bridgeUrl: "https://bridge.tonapi.io/bridge",
+//   platforms: ["ios", "android", "macos", "windows", "linux"],
+// };
 
-tonConnectUI.uiOptions = {
-  walletsListConfiguration: {
-    includeWallets: [customWallet],
-  },
-};
+// tonConnectUI.uiOptions = {
+//   walletsListConfiguration: {
+//     includeWallets: [customWallet],
+//   },
+// };
 
 const getWallets = async () => {
   const walletsList = await tonConnectUI.getWallets();
@@ -60,6 +62,29 @@ async function waitForGettingWalletInfo() {
   });
 }
 
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
 const connect = async () => {
   const payloadTTLMS = 1000 * 60 * 20;
   refreshPayload();
@@ -84,4 +109,31 @@ const connect = async () => {
 
   const addressPrime = address.toString(true, true, true, false);
   console.log(addressPrime);
+
+  const result = await axios.post(baseURL + "/auth/nonce", {
+    system: "battle_city",
+    game: "battle_city_portal",
+    api_key: "YV8Np3404Ynf4rb6qF9J",
+    address: addressPrime,
+    chain: "polygon",
+  });
+
+  if (result?.data?.status === "OK") {
+    const getAccessTokenResult = await axios.post(baseURL + "/auth/token", {
+      address: addressPrime,
+      type: "ton",
+      walletInfo: currentTonWalletInfo,
+      network: currentTonWalletInfo?.account?.chain,
+      proofInput: {
+        state_init: currentTonWalletInfo?.account?.walletStateInit,
+      },
+      connected: false,
+      chain: "polygon",
+      system: "battle_city",
+      game: "battle_city_tank",
+      api_key: "Z5hjpcEGxGfhzVSCGFLY",
+    });
+    const accessToken = getAccessTokenResult?.data?.result?.accessToken;
+    setCookie("accessToken", accessToken, 5);
+  }
 };
