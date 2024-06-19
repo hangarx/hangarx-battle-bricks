@@ -16,7 +16,7 @@
         position: relative;
       }
       canvas {
-        height: 100vh;
+        height: 100vh !important;
       }
     </style>
   </head>
@@ -31,7 +31,7 @@
           <div id="unity-progress-bar-full"></div>
         </div>
       </div>
-      <div id="unity-mobile-warning"></div>
+      <!-- <div id="unity-mobile-warning"></div> -->
       <div id="unity-footer" style="display: none">
         <button id="ton-connect" onclick="connect()">Connect</button>
         <button id="cookie" onclick="getCookie()"></button>
@@ -42,11 +42,11 @@
     </div>
     <script>
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/BattleBricksTON.loader.js";
+      var loaderUrl = buildUrl + "/BattleBricksTonWallet.loader.js";
       var config = {
-        dataUrl: buildUrl + "/45c9759a4c7c597186bca81c5786d4cf.data",
-        frameworkUrl: buildUrl + "/55f41bdd98175b86d6819e11f371ff84.js",
-        codeUrl: buildUrl + "/7d1e6070287a5a12b682158bb2ca6008.wasm",
+        dataUrl: buildUrl + "/bab902127f65c603546f575a228884c0.data",
+        frameworkUrl: buildUrl + "/dc7df617ca3fb99b222fc452a33831b5.js",
+        codeUrl: buildUrl + "/b67d3114c06a0c313f2e776539e1f37a.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "MangoX",
         productName: "LOT-Legends of Tank",
@@ -72,10 +72,10 @@
         // Avoid draining fillrate performance on mobile devices,
         // and default/override low DPI mode on mobile browsers.
         config.devicePixelRatio = window.devicePixelRatio;
-        mobileWarning.style.display = "block";
-        setTimeout(() => {
-          mobileWarning.style.display = "none";
-        }, 5000);
+        // mobileWarning.style.display = "block";
+        // setTimeout(() => {
+        //   mobileWarning.style.display = "none";
+        // }, 5000);
       } else {
         canvas.style.width = "400px";
         canvas.style.height = "630px";
