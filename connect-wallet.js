@@ -86,6 +86,10 @@ const getCookie = (cname) => {
 }
 
 const connect = async () => {
+  const at = getCookie("accessToken");
+  if(at) {
+    return;
+  }
   const payloadTTLMS = 1000 * 60 * 20;
   refreshPayload();
   const connected = await tonConnectUI.connectionRestored;
