@@ -14,8 +14,6 @@
     <type fullname="TAK.CountDownController" preserve="all" />
     <type fullname="TAK.EndGameErrorDialog" preserve="all" />
     <type fullname="TAK.EndGameVictoryDialog" preserve="all" />
-    <type fullname="TAK.ForgotPasswordDialog" preserve="all" />
-    <type fullname="TAK.ForgotPasswordDoneDialog" preserve="all" />
     <type fullname="TAK.GUI.BuyHangarDialog" preserve="all" />
     <type fullname="TAK.GUI.BuyStarterPackDialog" preserve="all" />
     <type fullname="TAK.GUI.BuyTankBoxDialog" preserve="all" />
@@ -57,7 +55,6 @@
     <type fullname="TAK.LeaderboardView" preserve="all" />
     <type fullname="TAK.LobbyTetrisPrefab" preserve="all" />
     <type fullname="TAK.LocalizedText" preserve="all" />
-    <type fullname="TAK.LoginByEmailDialog" preserve="all" />
     <type fullname="TAK.LogOutDialog" preserve="all" />
     <type fullname="TAK.MaintenanceDialog" preserve="all" />
     <type fullname="TAK.MatchHistoryView" preserve="all" />
@@ -70,8 +67,6 @@
     <type fullname="TAK.SettingsDialog" preserve="all" />
     <type fullname="TAK.ShopPrefab" preserve="all" />
     <type fullname="TAK.ShopView" preserve="all" />
-    <type fullname="TAK.SignUpDialog" preserve="all" />
-    <type fullname="TAK.SignUpDoneDialog" preserve="all" />
     <type fullname="TAK.StreamMatchingDialog" preserve="all" />
     <type fullname="TAK.TankBoxPrefab" preserve="all" />
     <type fullname="TAK.TankViewLitePrefab" preserve="all" />
@@ -90,7 +85,6 @@
     <type fullname="TAK.VictoryRewardView" preserve="all" />
     <type fullname="TAK.WaitingRoomDialogTeamvsTeam" preserve="all" />
     <type fullname="TAK.WaitingRoomTetrisDialog" preserve="all" />
-    <type fullname="TAK.WalletAddressDialog" preserve="all" />
     <type fullname="TankAnimation" preserve="all" />
     <type fullname="UIHueTank" preserve="all" />
     <type fullname="WebGLSupport.WebGLInput" preserve="all" />
