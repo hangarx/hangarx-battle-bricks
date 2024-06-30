@@ -25,6 +25,15 @@ let interval;
 //   },
 // };
 
+const deleteAllCookies = () => {
+  document.cookie.split(';').forEach(cookie => {
+      const eqPos = cookie.indexOf('=');
+      const name = eqPos > -1 ? cookie.substring(0, eqPos) : cookie;
+      document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
+  });
+return true;
+}
+
 const getWallets = async () => {
   const walletsList = await tonConnectUI.getWallets();
   console.log(walletsList);
@@ -69,7 +78,7 @@ function setCookie(cname, cvalue, exdays) {
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
-function getCookie(cname) {
+const getCookie = (cname) => {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(';');
@@ -85,7 +94,21 @@ function getCookie(cname) {
   return "";
 }
 
+const sleep = async () => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(true);
+    },2500)
+  })
+}
+
 const connect = async () => {
+  deleteAllCookies();
+  await sleep();
+  const at = getCookie("accessToken");
+  if(at) {
+    return;
+  }
   const payloadTTLMS = 1000 * 60 * 20;
   refreshPayload();
   const connected = await tonConnectUI.connectionRestored;

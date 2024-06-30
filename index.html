@@ -10,12 +10,13 @@
     <script src="network.js"></script>
     <link rel="manifest" href="./manifest.json" />
     <link href="./static/css/main.1359096b.chunk.css" rel="stylesheet" />
+
     <style>
-      #unity-container {
+      /* #unity-container {
         position: relative;
-      }
+      } */
       canvas {
-        height: 100vh;
+        height: 100vh !important;
       }
     </style>
   </head>
@@ -30,10 +31,8 @@
           <div id="unity-progress-bar-full"></div>
         </div>
       </div>
-      <!-- <div id="unity-mobile-warning">
-        WebGL builds are not supported on mobile devices.
-      </div> -->
-      <div id="unity-footer">
+      <!-- <div id="unity-mobile-warning"></div> -->
+      <div id="unity-footer" style="display: none">
         <button id="ton-connect" onclick="connect()">Connect</button>
         <button id="cookie" onclick="getCookie()"></button>
         <!-- <div id="unity-webgl-logo"></div> -->
@@ -45,9 +44,9 @@
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/BattleBricksTonWallet.loader.js";
       var config = {
-        dataUrl: buildUrl + "/06450337ed79ab17346f4b00018867fd.data",
-        frameworkUrl: buildUrl + "/ecfba3133719d99ab99c291dd1e37663.js",
-        codeUrl: buildUrl + "/4259aac02a0e97beddc81e289bc46a79.wasm",
+        dataUrl: buildUrl + "/2aa95ecba5cdf2534d7b8c90bd06a71d.data",
+        frameworkUrl: buildUrl + "/dc7df617ca3fb99b222fc452a33831b5.js",
+        codeUrl: buildUrl + "/96b3b4c3e4bf4bf40c67f9c5e72efeba.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "MangoX",
         productName: "LOT-Legends of Tank",
@@ -59,7 +58,7 @@
       var loadingBar = document.querySelector("#unity-loading-bar");
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
-      // var mobileWarning = document.querySelector("#unity-mobile-warning");
+      var mobileWarning = document.querySelector("#unity-mobile-warning");
 
       // By default Unity keeps WebGL canvas render target size matched with
       // the DOM size of the canvas element (scaled by window.devicePixelRatio)
@@ -355,12 +354,14 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="./tonweb.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/buffer@6.0.3/index.min.js"></script> -->
     <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
     <script src="./connect-wallet.js"></script>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
-      // expan tma 
-      Telegram.WebApp.expand()
+      window.Telegram.WebApp.expand();
+      window.Telegram.WebApp.enableClosingConfirmation();
+      window.Telegram.WebApp.headerColor = "#f18620";
     </script>
   </body>
 </html>
